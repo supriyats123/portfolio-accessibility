@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Supriya T S about software development and projects.">
+  <title>Contact | Supriya T S</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Supriya T S home">SUPRIYA T S</a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main-content" class="page-content">
+    <section aria-labelledby="contact-title">
+      <h1 id="contact-title">Contact Me</h1>
+      <p>Complete the form below. All fields are required.</p>
+      <form action="#" method="get">
+        <div class="form-field">
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="form-field">
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="form-field">
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" type="text" required>
+        </div>
+        <div class="form-field">
+          <label for="message">Your message</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+        </div>
+        <button class="button" type="submit">Submit message</button>
+        <p id="form-status" role="status" aria-live="polite"></p>
+        <p class="form-note"></p>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <p>&copy; 2026 Supriya T S. All rights reserved.</p>
+  </footer>
+  
+<script>
+  const contactForm = document.querySelector("form");
+  const formStatus = document.getElementById("form-status");
+
+  contactForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  if (!contactForm.reportValidity()) {
+    return;
+  }
+
+  formStatus.textContent = "Message submitted successfully! ";
+  contactForm.reset();
+});
+</script>
+
+</body>
+</html>
